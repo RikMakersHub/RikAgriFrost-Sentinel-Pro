@@ -161,12 +161,13 @@ h2 {
 .diagnostics-section ul {
     margin: 0;
     padding-left: 15px;
-    color: var(--text-muted);
+    color: var(--text-primary);
     font-size: 0.85rem;
 }
 
 .diagnostics-section li {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+    line-height: 1.5;
 }
 
 .bom-table {
@@ -242,7 +243,6 @@ h2 {
     font-size: 0.85rem;
 }
 
-/* Footer divider style */
 .footer-divider {
     border: 0;
     border-top: 1px solid var(--border-light);
@@ -250,7 +250,6 @@ h2 {
     margin-bottom: 30px;
 }
 
-/* Footer attribution typography matching your screenshot */
 .system-footer {
     text-align: center;
     color: #94a3b8;
