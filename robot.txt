@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rikmakershub.github.io/RikAgriFrost-Sentinel-Pro/
