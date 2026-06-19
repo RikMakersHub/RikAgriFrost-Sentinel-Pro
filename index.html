@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RikAgriFrost-Sentinel-Pro | Documentation Server</title>
+    
+    <!-- Core Favicon Integration Link -->
     <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Link to Stylesheet Module -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Upper System Notification Bar -->
     <div class="system-notification">
         ⚠️ ECO-SYSTEM NOTIFICATION: PRODUCTION LOG UPGRADED TO NON-BLOCKING STATE VIA RIKECOCODE-PRO MATRIX
     </div>
 
     <div class="wrapper">
+        <!-- Top Navigation Asset Link Bar -->
         <nav class="nav-bar">
             <span class="nav-logo">RIKMAKERSHUB / RIKAGRIFROST-SENTINEL-PRO</span>
             <div class="nav-links">
@@ -23,12 +29,14 @@
             </div>
         </nav>
 
+        <!-- Main Project Header Container -->
         <header class="main-header">
             <div class="system-id">SYSTEM ID: SYS-020 • POWER REGIME: RIKECOCODE-PRO MATRIX</div>
             <h1>RikAgriFrost-Sentinel-Pro: Value-Engineered Micro-Climate Node</h1>
             <p class="subtitle">An ultra-low cost, battery optimized dew point calculator and radiation frost predictor built for extreme environmental field endurance. Built entirely on an open-source framework by RikMakersHub.</p>
         </header>
 
+        <!-- System Schematic Section -->
         <section class="content-section">
             <h2>SYSTEM SCHEMATIC & WIRING MATRIX</h2>
             <p class="section-desc">Hardware routing map for interconnecting the low-power sensing loop, battery regulation, and alerting hardware.</p>
@@ -54,6 +62,7 @@
             </div>
         </section>
 
+        <!-- Core Wiring Diagnostics Block -->
         <section class="diagnostics-section">
             <h3>❗ CORE WIRING DIAGNOSTICS:</h3>
             <ul>
@@ -63,6 +72,44 @@
             </ul>
         </section>
 
+        <!-- Deep-Sleep Power Optimization Module -->
+        <section class="content-section">
+            <h2>DEEP-SLEEP POWER OPTIMIZATION (ESP8266 HARDWARE HACK)</h2>
+            <div class="diagnostics-section" style="border-left-color: var(--accent-red); margin-top: 15px;">
+                <ul>
+                    <li><strong>Onboard SMD LED Removal:</strong> Standard ESP8266 development boards feature a surface-mounted (SMD) power indicator LED that constantly drains an unnecessary 3mA to 5mA of phantom current from your battery bank.</li>
+                    <li><strong>Execution Steps:</strong> Carefully use a clean soldering iron tip or a sharp tool to desolder or flick off the onboard Power SMD LED and its corresponding current-limiting resistor from the PCB footprint. Be highly cautious not to bridge adjacent logic traces or lift the pads.</li>
+                    <li><strong>The Technical Payroll:</strong> Removing this single redundant element drops the hardware sleep current floor from milliamps down to an ultra-low regime under 20 microamps (µA), extending off-grid standalone battery operation from a few days to several months on a single cell.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Field Assembly & Calibration Guide -->
+        <section class="content-section">
+            <h2>04 // FIELD ASSEMBLY & CALIBRATION GUIDE</h2>
+            <div class="diagnostics-section" style="border-left-color: #f59e0b; margin-top: 15px;">
+                <ul>
+                    <li><strong>Chassis Modification:</strong> Take a standard 3-inch PVC electrical junction box enclosure. Seal all wire entry pathways using heavy-duty silicone sealant or hot glue matrices to maintain complete environmental protection against moisture entry.</li>
+                    <li><strong>Optical Element Alignment:</strong> Mount the high-precision AHT20 sensor logic completely flat inside the chamber, isolated from direct wind exposure currents while allowing open atmospheric airflow venting.</li>
+                    <li><strong>Hardware Timer Connection:</strong> Double check that the physical wire bridge from GPIO16 (D0) to the RST pin is robust. If this connection degrades under high humidity, the chip will enter permanent sleep state lethargy.</li>
+                    <li><strong>Calibration Protocol:</strong> Upload the validation script, log the initial stabilization baseline values over 60 seconds, and ensure the local dew point mathematical results closely track matching reference data platforms.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Cross-Field Implementation Strategy -->
+        <section class="content-section">
+            <h2>✔️ CROSS-FIELD IMPLEMENTATION STRATEGY</h2>
+            <div class="diagnostics-section" style="border-left-color: #22c55e; margin-top: 15px;">
+                <ul>
+                    <li><strong>Deploy Sentinel Node:</strong> Mount the environmental probe housing directly onto field staking arrays near high-value crop canopy baselines.</li>
+                    <li><strong>Anti-Lux Protection:</strong> Position the node casing facing directly downwards or utilize an external sun-shield canopy structure to eliminate direct midday radiant heat vectors.</li>
+                    <li><strong>Power Optimizations:</strong> Keep sensor reading periods short to protect the internal battery resource, scaling checking windows outward dynamically during stable conditions.</li>
+                    <li><strong>Weatherproofing:</strong> Ensure a small water drip loop is shaped into external wire traces to route moisture away from internal entry junctions.</li>
+                </ul>
+            </div>
+        </section>
+        <!-- Bill of Materials Table Section -->
         <section class="content-section">
             <h2>BILL OF MATERIALS (BOM) • COST ANALYSIS</h2>
             <p class="section-desc">Value-engineered hardware matrix targeting an active field deployment cost under ₹500 ($6.00 USD).</p>
@@ -111,6 +158,7 @@
             </table>
         </section>
 
+        <!-- Firmware Source Code Display Block -->
         <section class="content-section">
             <h2>CORE FIRMWARE SOURCE REFACTOR</h2>
             <p class="section-desc">Watchdog-gated production script optimized via RikEcoCode-Pro computational analytics to remove blocking delay() lines.</p>
@@ -169,7 +217,7 @@ void loop() {}</code></pre>
             </div>
         </section>
 
-        <!-- The Missing Structural Elements -->
+        <!-- Horizontal Rule Divider Layer -->
         <hr class="footer-divider">
 
         <footer class="system-footer">
@@ -177,26 +225,7 @@ void loop() {}</code></pre>
         </footer>
     </div>
 
-    <!-- Active Copy Engine Function -->
-    <script>
-        document.querySelector('.copy-btn').addEventListener('click', function() {
-            const codeText = document.querySelector('.code-body code').innerText;
-            navigator.clipboard.writeText(codeText).then(() => {
-                const btn = document.querySelector('.copy-btn');
-                const originalText = btn.innerText;
-                btn.innerText = 'Copied!';
-                btn.style.borderColor = '#22c55e';
-                btn.style.color = '#22c55e';
-                
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.style.borderColor = '#334155';
-                    btn.style.color = '#94a3b8';
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy code: ', err);
-            });
-        });
-    </script>
+    <!-- Link to External JavaScript Logic Module -->
+    <script src="script.js"></script>
 </body>
 </html>
