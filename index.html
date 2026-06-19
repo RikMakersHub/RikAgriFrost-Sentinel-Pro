@@ -167,7 +167,35 @@ void loop() {}</code></pre>
                 </div>
             </div>
         </section>
+
+        <!-- The Missing Structural Elements -->
+        <hr class="footer-divider">
+
+        <footer class="system-footer">
+            © 2026 RikMakersHub Pro Architecture Systems. All Rights Reserved. • Powered by Static Optimization Pipeline.
+        </footer>
     </div>
 
+    <!-- Active Copy Engine Function -->
+    <script>
+        document.querySelector('.copy-btn').addEventListener('click', function() {
+            const codeText = document.querySelector('.code-body code').innerText;
+            navigator.clipboard.writeText(codeText).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                const originalText = btn.innerText;
+                btn.innerText = 'Copied!';
+                btn.style.borderColor = '#22c55e';
+                btn.style.color = '#22c55e';
+                
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.borderColor = '#334155';
+                    btn.style.color = '#94a3b8';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy code: ', err);
+            });
+        });
+    </script>
 </body>
 </html>
