@@ -241,3 +241,20 @@ h2 {
     color: #38bdf8;
     font-size: 0.85rem;
 }
+
+/* Footer divider style */
+.footer-divider {
+    border: 0;
+    border-top: 1px solid var(--border-light);
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+/* Footer attribution typography matching your screenshot */
+.system-footer {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    letter-spacing: 0.2px;
+}
