@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RikAgriFrost-Sentinel-Pro | Documentation Server</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="system-notification">
+        ⚠️ ECO-SYSTEM NOTIFICATION: PRODUCTION LOG UPGRADED TO NON-BLOCKING STATE VIA RIKECOCODE-PRO MATRIX
+    </div>
+
+    <div class="wrapper">
+        <nav class="nav-bar">
+            <span class="nav-logo">RIKMAKERSHUB / RIKAGRIFROST-SENTINEL-PRO</span>
+            <div class="nav-links">
+                <a href="https://github.io" target="_blank">RikAquaShield-Pro</a>
+                <a href="https://github.com" target="_blank">RikAgriculture-Pro</a>
+                <a href="https://github.com" class="active-nav-btn" target="_blank">GitHub Hub</a>
+            </div>
+        </nav>
+
+        <header class="main-header">
+            <div class="system-id">SYSTEM ID: SYS-020 • POWER REGIME: RIKECOCODE-PRO MATRIX</div>
+            <h1>RikAgriFrost-Sentinel-Pro: Value-Engineered Micro-Climate Node</h1>
+            <p class="subtitle">An ultra-low cost, battery optimized dew point calculator and radiation frost predictor built for extreme environmental field endurance. Built entirely on an open-source framework by RikMakersHub.</p>
+        </header>
+
+        <section class="content-section">
+            <h2>SYSTEM SCHEMATIC & WIRING MATRIX</h2>
+            <p class="section-desc">Hardware routing map for interconnecting the low-power sensing loop, battery regulation, and alerting hardware.</p>
+            
+            <div class="diagram-container">
+                <div class="diagram-grid">
+                    <div class="block solar-block">MINI SOLAR PANEL (5V)</div>
+                    <div class="block battery-block">18650 LI-ION BATTERY</div>
+                    <div class="block mcu-block">ESP8266 (ESP-12F) VCC</div>
+                    <div class="block alert-block">ESP-NOW BUS TRANSMIT</div>
+                </div>
+                
+                <div class="diagram-notes">
+                    <div class="note-col">
+                        <div class="note-bullet">📍 GPIO4 (D2) → AHT20 SDA Pin</div>
+                        <div class="note-bullet">📍 GPIO5 (D1) → AHT20 SCL Pin</div>
+                    </div>
+                    <div class="note-col">
+                        <div class="note-bullet">📍 GPIO16 (D0) → Connected to RST Pin</div>
+                        <div class="note-bullet">📍 GPIO15 (D8) → Pulled LOW via 10kΩ</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="diagnostics-section">
+            <h3>❗ CORE WIRING DIAGNOSTICS:</h3>
+            <ul>
+                <li><strong>GND Bus:</strong> Ensure a shared, solid common ground between the bare ESP-12F module, the AHT20 sensor, and the negative battery trace.</li>
+                <li><strong>Hardware Deep-Sleep:</strong> Pin 16 must be soldered directly to the Reset (RST) pin. Without this hardware bridge, the internal watchdog timer cannot wake the chip.</li>
+                <li><strong>RF Stabilizer:</strong> Solder a low-ESR 100µF capacitor directly across the VCC and GND pins of the ESP8266 to suppress voltage drops during radio spikes.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>BILL OF MATERIALS (BOM) • COST ANALYSIS</h2>
+            <p class="section-desc">Value-engineered hardware matrix targeting an active field deployment cost under ₹500 ($6.00 USD).</p>
+            
+            <table class="bom-table">
+                <thead>
+                    <tr>
+                        <th>Component Name</th>
+                        <th>Specification / Type</th>
+                        <th>Cost (₹)</th>
+                        <th>Primary Operational Function</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Microcontroller</strong></td>
+                        <td>ESP8266 Core (ESP-12F bare module)</td>
+                        <td>₹140</td>
+                        <td>Core logic execution loop and layer-2 radio stack execution.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sensing Array</strong></td>
+                        <td>AHT20 High-Accuracy Temperature/Humidity</td>
+                        <td>₹110</td>
+                        <td>Provides calibrated I2C inputs for localized atmospheric tracking.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Energy Storage</strong></td>
+                        <td>Reclaimed 18650 Battery Cell + TP4056 Board</td>
+                        <td>₹90</td>
+                        <td>Autonomous off-grid power management subsystem loop.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>System Shielding</strong></td>
+                        <td>IP65 Weatherproof Electrical PVC Junction Box</td>
+                        <td>₹40</td>
+                        <td>Protects core tracking nodes from monsoonal conditions.</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td><strong>Total Build Cost</strong></td>
+                        <td>Value-Engineered Prototype Framework</td>
+                        <td>₹380</td>
+                        <td><strong>₹380 / $4.55 USD (Success)</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>CORE FIRMWARE SOURCE REFACTOR</h2>
+            <p class="section-desc">Watchdog-gated production script optimized via RikEcoCode-Pro computational analytics to remove blocking delay() lines.</p>
+            
+            <div class="code-box">
+                <div class="code-header">
+                    <span>frost_sentinel_optimized.ino</span>
+                    <button class="copy-btn">Copy Code</button>
+                </div>
+                <div class="code-body">
+                    <pre><code>#include &lt;ESP8266WiFi.h&gt;
+#include &lt;espnow.h&gt;
+#include &lt;Wire.h&gt;
+#include &lt;AHTxx.h&gt;
+
+uint8_t gatewayMac[] = {0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF};
+
+struct __attribute__((packed)) SensorPayload {
+  float temperature;
+  float humidity;
+  float dewPoint;
+  bool frostRisk;
+};
+
+SensorPayload telemetry;
+AHTxx aht20(AHTXX_ADDRESS_X38, AHT2x_SENSOR);
+
+void onDataSent(uint8_t* mac_addr, uint8_t sendStatus) {
+  WiFi.mode(WIFI_OFF);
+  ESP.deepSleep(900e6); 
+}
+
+void setup() {
+  WiFi.mode(WIFI_STA);
+  WiFi.disconnect();
+  Wire.begin(4, 5);
+  if (!aht20.begin()) { ESP.deepSleep(300e6); }
+
+  telemetry.temperature = aht20.readTemperature();
+  telemetry.humidity = aht20.readHumidity();
+  
+  float a = 17.625; float b = 243.04;
+  float alpha = ((a * telemetry.temperature) / (b + telemetry.temperature)) + log(telemetry.humidity / 100.0);
+  telemetry.dewPoint = (b * alpha) / (a - alpha);
+  telemetry.frostRisk = (telemetry.dewPoint <= 2.0);
+
+  if (esp_now_init() != 0) { ESP.deepSleep(300e6); }
+  esp_now_set_self_role(ESP_NOW_ROLE_CONTROLLER);
+  esp_now_register_send_cb(onDataSent);
+  esp_now_add_peer(gatewayMac, ESP_NOW_ROLE_SLAVE, 1, NULL, 0);
+  esp_now_send(gatewayMac, (uint8_t *) &telemetry, sizeof(telemetry));
+}
+
+void loop() {}</code></pre>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
